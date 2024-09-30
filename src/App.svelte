@@ -9,11 +9,17 @@
   import PeopleFilms from './lib/tables/People_in_films.svelte';
   import SpeciesFilms from './lib/tables/Species_in_films.svelte';
   import SpeciesInFilms from './lib/tables/Species_in_films.svelte';
-  import PlanetsInFilms from './lib/tables/Planets_in_films.svelte';
+  //import PlanetsInFilms from './lib/tables/Planets_in_films.svelte';
+  import PlanetsInFilms from './lib/tables/Table.svelte';
   import VesselsInFilms from './lib/tables/Vessels_in_films.svelte';
   import Films from './lib/tables/Films.svelte';
 
 
+  let inputData = [
+    { key: 'id1', type: 'type1', note: 'note1' },
+    { key: 'id2', type: 'type2', note: 'note2' },
+    { key: 'id3', type: 'type3', note: 'note33 note33 note33 note33 note33 note33note33note33note33note33 ' }
+  ];
 </script>
 <body>
   <Svelvet fitView controls minimap>
@@ -25,7 +31,7 @@
     <Starship/>
     <PeopleFilms/>
     <SpeciesInFilms/>
-    <PlanetsInFilms/>
+    <PlanetsInFilms {inputData}/>
     <VesselsInFilms/>
     <Films/>
     <ThemeToggle main='dark' alt='light' slot='toggle'/>

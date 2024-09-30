@@ -18,30 +18,17 @@
   
   let config = [
     {
-      title: "Planets in Films",
-      id: "planets_in_films",
-      inputData: [
+      title: "abc",
+      id: "abc",
+      position: { x: 0, y: -500 },
+      data: [
         { key: 'id1', type: 'type1', note: 'note1' },
         { key: 'id2', type: 'type2', note: 'note2' },
         { key: 'id3', type: 'type3', note: 'note3' }
       ],
-      inputAnchors: [
+      anchors: [
         { type: 'input', key: 'id1', connections: [['table_id', 'anchor_id']], direction: "west" },
-        { type: 'input', key: 'id2', connections: [['films', 'films_anchor1']], direction: "east" },
-        { type: 'output', key: 'id3', id: "output_anchor1", direction: "west" }
-      ]
-    },
-    {
-      title: "Test Table",
-      id: "test_table",
-      inputData: [
-        { key: 'id1', type: 'type1', note: 'note1' },
-        { key: 'id2', type: 'type2', note: 'note2' },
-        { key: 'id3', type: 'type3', note: 'note3' }
-      ],
-      inputAnchors: [
-        { type: 'input', key: 'id1', connections: [['planets_in_films', 'output_anchor1']], direction: "west" },
-        { type: 'input', key: 'id2', connections: [['films', 'films_anchor1']], direction: "east" },
+        { type: 'input', key: 'id2', connections: [['ass', 'ss']], direction: "east" },
         { type: 'output', key: 'id3', id: "output_anchor1", direction: "west" }
       ]
     }

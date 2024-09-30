@@ -1,10 +1,8 @@
 <script>
   import { Node, Anchor } from 'svelvet';
-
-  export let title = "Planets in Films";
-  export let id = "planets_in_films"; // Passed from parent
-  export let inputData = [];
-  export let inputAnchors = [];
+    
+  export let config = {};
+  export let { title = "Default Title", id = null, inputData = [], inputAnchors = [] } = config;
 
   // Function to determine Y offset for anchor placement
   function getRowYPosition(key) {

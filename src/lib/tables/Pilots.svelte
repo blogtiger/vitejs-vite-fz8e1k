@@ -5,7 +5,7 @@
   <Node  useDefaults id='pilot' position={{x:-300, y:300}}>
     <div class='nodeWrapper'>
       <div class='p_1'>
-        <Anchor  i
+        <Anchor
           id='pilots_anchor1' 
           connections={[['people', 'people_anchor1']]} 
           input  

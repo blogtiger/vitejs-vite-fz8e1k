@@ -14,12 +14,33 @@
   import VesselsInFilms from './lib/tables/Vessels_in_films.svelte';
   import Films from './lib/tables/Films.svelte';
 
-
+  
+  let config = {
+    title: "Planets in Films",
+    id: "planets_in_films",
+    inputData: [
+      { key: 'id1', type: 'type1', note: 'note1' },
+      { key: 'id2', type: 'type2', note: 'note2' },
+      { key: 'id3', type: 'type3', note: 'note3' }
+    ],
+    inputAnchors: [
+      { type: 'input', key: 'id1', connections: [['table_id', 'anchor_id']], direction: "west" },
+      { type: 'input', key: 'id2', connections: [['films', 'films_anchor1']], direction: "east" },
+      { type: 'output', key: 'id3', id: "output_anchor1", direction: "west" }
+    ]
+  };
+  
   let inputData = [
     { key: 'id1', type: 'type1', note: 'note1' },
     { key: 'id2', type: 'type2', note: 'note2' },
     { key: 'id3', type: 'type3', note: 'note33 note33 note33 note33 note33 note33note33note33note33note33 ' }
   ];
+  let inputAnchors = [
+    { type: 'input', key: 'id2', connections: [['planets', 'planets_anchor2']], direction: "west" },
+    { type: 'input', key: 'id2', connections: [['films', 'films_anchor1']], direction: "east" },
+    { type: 'output', key: 'id3', id: "output_anchor1", direction: "west" }
+  ];
+
 </script>
 <body>
   <Svelvet fitView controls minimap>
@@ -31,7 +52,7 @@
     <Starship/>
     <PeopleFilms/>
     <SpeciesInFilms/>
-    <PlanetsInFilms {inputData}/>
+    <PlanetsInFilms {inputData} {inputAnchors}/>
     <VesselsInFilms/>
     <Films/>
     <ThemeToggle main='dark' alt='light' slot='toggle'/>

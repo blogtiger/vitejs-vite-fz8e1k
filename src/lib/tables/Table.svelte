@@ -2,25 +2,51 @@
   import { Node, Anchor } from 'svelvet';
 
   export let title = "Planets in Films";
-  export let inputData = [
-    { key: 'id1', type: 'type1', note: 'note1' },
-    { key: 'id2', type: 'type2', note: 'note2' },
-    { key: 'id3', type: 'type3', note: 'note3' }
-  ];
+  export let id = "planets_in_films"; // Passed from parent
+  export let inputData = [];
+  export let inputAnchors = [];
+
+  // Function to determine Y offset for anchor placement
+  function getRowYPosition(key) {
+    const rowIndex = inputData.findIndex(item => item.key === key);
+    return rowIndex !== -1 ? 60 + rowIndex * 35 : 0;  // Assuming row height is ~35px
+  }
 </script>
 
-<Node useDefaults id='planets_in_films' position={{ x: 700, y: 400 }}>
+<Node useDefaults id={id} position={{ x: 700, y: 400 }}>
   <div class='nodeWrapper'>
-    <div class='p_1'>
-      <Anchor input connections={[['planets', 'planets_anchor2']]} direction="west" />
-    </div>
-    <div class='p_2'>
-      <Anchor input connections={[['films', 'films_anchor1']]} direction="east" />
-    </div>
+    {#each inputAnchors as anchor}
+      {#if anchor.type === 'input'}
+        <!-- Input Anchor -->
+        <div
+          class="anchorWrapper"
+          style="
+            position: absolute; 
+            top: {getRowYPosition(anchor.key)}px;
+            {anchor.direction === 'west' ? 'left: -16px;' : 'right: -16px;'}
+          "
+        >
+          <Anchor input connections={anchor.connections} direction={anchor.direction} />
+        </div>
+      {:else if anchor.type === 'output'}
+        <!-- Output Anchor -->
+        <div
+          class="anchorWrapper"
+          style="
+            position: absolute; 
+            top: {getRowYPosition(anchor.key)}px;
+            {anchor.direction === 'west' ? 'left: -16px;' : 'right: -16px;'}
+          "
+        >
+          <Anchor id={anchor.id} direction={anchor.direction} />
+        </div>
+      {/if}
+    {/each}
 
     <div id='container'>
       <div id='heading'>{title}</div>
-      <table id="planets_filmsTable">
+      <!-- Use dynamic ID for the table -->
+      <table id={id + "Table"}>
         {#each inputData as { key, type, note }}
           <tr>
             <td>{key}</td>
@@ -47,22 +73,10 @@
     gap: 10px;
   }
 
-  .p_1 {
-    position: absolute;
+  .anchorWrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    top: 56px;
-    left: -16px;
-  }
-
-  .p_2 {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    top: 90px;
-    right: -14px;
   }
 
   #heading {
@@ -76,7 +90,8 @@
     border-top-left-radius: 8px;
   }
 
-  #planets_filmsTable td {
+  /* Since we can't use {id} interpolation directly in CSS, you can target it this way */
+  table[id$="Table"] td {
     width: 70px;
     margin: 0px;
     padding: 8px;
@@ -85,7 +100,7 @@
     border-right: 1px solid gray;
   }
 
-  #planets_filmsTable td:last-child {
+  table[id$="Table"] td:last-child {
     border-right: none;
   }
 </style>

@@ -8,7 +8,8 @@ export default [
   {languageOptions: { globals: globals.browser }},
   {
     rules: {
-      "no-unused-vars": "warn",  // Warn about unused variables/functions
+      "no-unused-vars": ["warn", { "vars": "all", "args": "none" }],
+      "no-undef": "off"  
     }
   },
   pluginJs.configs.recommended,

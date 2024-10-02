@@ -5764,7 +5764,7 @@ export const a2=[
         });
     },
     function (e, t) {
-      e.exports = "./images/loader.gif?80f76fbd9f453dd1201678fe9575c247";
+      e.exports = "data.core/images/loader.gif?80f76fbd9f453dd1201678fe9575c247";
     },
     function (e, t, n) {
       "use strict";

@@ -2562,38 +2562,7 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                console.log(2565);
-                return [n("div", { staticClass: "sticky-header" }, [
-                  n(
-                    "h1",
-                    { staticClass: "doc-header" },
-                    [
-                      n("object-icon", {
-                        attrs: {
-                          title: e._dot(function () {
-                            return e.lo_.find(t.summary, [
-                              "field",
-                              "Type",
-                            ]).value;
-                          }, ""),
-                          size: "2x",
-                          obj: t,
-                        },
-                      }),
-                      e._v(
-                        "\n                " +
-                          e._s(
-                            e.$store.state.repository.structureById[
-                              e.$route.params.id
-                            ].name
-                          ) +
-                          "\n            "
-                      ),
-                    ],
-                    1
-                  ),
-                ]),
-                e._v(" "),
+                return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",

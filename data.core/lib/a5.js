@@ -1,3 +1,5 @@
+import { identity } from "svelte/internal";
+
 export const a5=[
 
     function (e, t, n) {
@@ -602,6 +604,8 @@ export const a5=[
               t("div", { staticClass: "v-line js-resizable-splitter" }),
               this._v(" "),
               t("div", { staticClass: "v-content" }, [this._t("content")], 2),
+              this._v(" "),
+              t("div", { staticClass: "v-diagram" }, [t("div", { staticClass: "appDiagram" })]),
             ]);
           },
           staticRenderFns: [],

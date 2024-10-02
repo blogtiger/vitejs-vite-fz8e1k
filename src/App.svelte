@@ -137,6 +137,12 @@
 ]
 
 
+  // Define a method to clear and set new config
+  window.SetDiagram = function(newconfig) {
+    config.length=0;
+    config = [...newconfig]; // Replace the config with the new array
+  }
+
 </script>
 <body>
   <Svelvet fitView controls minimap>
@@ -153,7 +159,7 @@
 		justify-content: center;
 		align-items: center;
 		background-color: gray;
-		width: 100vw;
+		width: 50vw;
 		height: 100vh;
 		padding: 0;
 		margin: 0;

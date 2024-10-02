@@ -16,6 +16,10 @@ function initializeApp() {
   return null;
 }
 
-// Initialize the app and export it
 const app = initializeApp();
+
+window.diagramApp=app;
+
+
+
 export default app;

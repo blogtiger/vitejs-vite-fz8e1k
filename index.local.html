@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js is-booting" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-app-version" content="{{ version_hash }}">
+    <meta name="x-data-version" content="20241001051852">
+
+    <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js")</script>
+    <script src="data.core/integrity-test.js?v={{ version_hash }}"></script>
+    <link rel="stylesheet" href="data.core/boot.css?v={{ version_hash }}">
+    <link rel="icon" href="favicon.ico">
+
+</head>
+<body>
+    <noscript>
+        <div class="no-js-popup">
+            <b>This site requires JavaScript to work</b>, please enable JavaScript in your browser or use a browser with JavaScript support.
+        </div>
+    </noscript>
+
+    <div class="app">
+        <router-view></router-view>
+    </div>
+
+    <div id="appDiagram"></div>
+    <link rel="stylesheet" href="data.core/app.css?v={{ version_hash }}">
+    <link rel="stylesheet" href="data.core/user.css?v={{ version_hash }}">
+    <script src="data.core/data.local.json.js?v=20241001051852"></script>
+    <script src="data.core/config.json.js?v=20241001051852"></script>
+    <script type="module" src="data.core/app.js?v={{ version_hash }}"></script>
+    <script src="data.core/user.js?v={{ version_hash }}"></script>
+    <!-- <script type="module" src="/src/main.ts"></script> -->
+</body>
+</html>

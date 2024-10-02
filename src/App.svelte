@@ -21,7 +21,8 @@
     "id": "films",
     "position": { "x": 1090, "y": 150 },
     "anchors": [
-      { "type": "output", "key": "id", "id": "films_anchor1", "direction": "west" }
+      { "type": "output", "key": "id", "id": "films_anchor1", "direction": "west" },
+      { "type": "input", "key": "title", "id": "people_anchor3", "edge": "{pkey}", "connections": [["species", "species_anchor1"]], "direction": "west" },
     ],
     "data": [
       { "key": "id", "type": "bigint", "note": "Primary Key, autoincrement()" },

@@ -92,7 +92,8 @@ export const a9 = [
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       n("i", { staticClass: "icon2x-structure" }),
@@ -194,7 +195,8 @@ export const a9 = [
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       n("i", { staticClass: "icon2x-structure" }),
@@ -310,7 +312,8 @@ export const a9 = [
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       n("i", { staticClass: "icon2x-table" }),
@@ -412,7 +415,8 @@ export const a9 = [
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       n("i", { staticClass: "icon2x-table" }),

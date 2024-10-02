@@ -1481,7 +1481,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -1589,7 +1590,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       e._v("Subject Areas"),
@@ -1633,7 +1635,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       n("i", { staticClass: "icon2x-module" }),
@@ -2562,7 +2565,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -2697,7 +2701,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       t.title_prefix
@@ -2748,7 +2753,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -2849,7 +2855,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       t.title_prefix
@@ -2900,7 +2907,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -2978,7 +2986,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       t.title_prefix
@@ -3029,7 +3038,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -3180,7 +3190,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -3373,7 +3384,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [e._v("Views")]),
                   ]),
@@ -3413,7 +3425,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       e._v("Procedures"),
@@ -3455,7 +3468,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [e._v("Functions")]),
                   ]),
@@ -3591,7 +3605,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -3678,7 +3693,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [e._v("Terms")]),
                   ]),
@@ -3718,7 +3734,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -3786,7 +3803,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       e._v("SQL Queries"),
@@ -3828,7 +3846,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -3929,7 +3948,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [
                       t.title_prefix
@@ -3980,7 +4000,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [e._v("Lookups")]),
                   ]),
@@ -4020,7 +4041,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -4097,7 +4119,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [e._v("Datasets")]),
                   ]),
@@ -4137,7 +4160,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",
@@ -4207,7 +4231,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n("h1", { staticClass: "doc-header" }, [e._v("Reports")]),
                   ]),
@@ -4254,7 +4279,8 @@ export const a7=[
             {
               key: "default",
               fn: function (t) {
-                return [
+                //debugger;
+return [
                   n("div", { staticClass: "sticky-header" }, [
                     n(
                       "h1",

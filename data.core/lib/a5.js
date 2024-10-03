@@ -605,6 +605,8 @@ export const a5=[
               this._v(" "),
               t("div", { staticClass: "v-content" }, [this._t("content")], 2),
               this._v(" "),
+              t("div", { staticClass: "v-line" }),
+              this._v(" "),
               t("div", { staticClass: "v-diagram" }, [t("div", { staticClass: "appDiagram" })]),
             ]);
           },

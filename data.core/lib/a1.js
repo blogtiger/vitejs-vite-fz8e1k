@@ -6,7 +6,6 @@ function (e, t, n) {
       "use strict";
       var r, i;
       function s() {
-        console.log('tttt');
         return r.apply(null, arguments);
       }
       function a(e) {

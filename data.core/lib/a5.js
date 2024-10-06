@@ -779,13 +779,21 @@ export const a5=[
             let objdt=this.$store.state.repository.objects[
               this.$route.params.id
             ];
+            window.objdt=objdt;
             window.dt=convertToSvelvetNode(objdt);
             // console.log(dt);
             // console.log(window.SetDiagram);
             if(window.SetDiagram){
-            window.SetDiagram([...[dt]]);
-            // window.SetDiagram([dt]);
-            }
+              let dts=[];
+              dts.push(dt);
+
+            objdt.relations.forEach(v=>{
+              console.log(`${v.foreign_table_object_id}=>${v.primary_table_object_id}, ${v.foreign_table_object_id==objdt.object_id?v.primary_table_object_id:v.foreign_table_object_id}`);
+              let objdtR_Id=v.foreign_table_object_id==objdt.object_id?v.primary_table_object_id:v.foreign_table_object_id;
+              dts.push(convertToSvelvetNode(this.$store.state.repository.objects[objdtR_Id]));
+            });
+            window.SetDiagram([...dts]);
+            };
 
           },
           methods: {

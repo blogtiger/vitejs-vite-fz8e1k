@@ -49,7 +49,6 @@
             <tr>
               <td>{key}</td>
               <td>{type}</td>
-              <td>{note}</td>
             </tr>
           {/each}
         </table>

@@ -20,6 +20,4 @@ const app = initializeApp();
 
 window.diagramApp=app;
 
-
-
 export default app;

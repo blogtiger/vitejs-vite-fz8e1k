@@ -1,5 +1,6 @@
   <script>
     import { Node, Anchor } from 'svelvet';
+    import pkey from '../edges/PKEY.svelte';
       
     export let configTb = {};
     export let { title = "Default Title", id = null, data = [], anchors = [], position={ x: 700, y: 400 } } = configTb;
@@ -24,7 +25,7 @@
               {anchor.direction === 'west' ? 'left: -16px;' : 'right: -16px;'}
             "
           >
-            <Anchor input connections={anchor.connections} direction={anchor.direction} />
+            <Anchor input edge={pkey}  connections={anchor.connections} direction={anchor.direction} />
           </div>
         {:else if anchor.type === 'output'}
           <!-- Output Anchor -->
@@ -79,7 +80,7 @@
     #heading {
       display: flex;
       justify-content: center;
-      background-color: rgb(247, 108, 108);
+      background-color: #dbe3f3;
       padding: 10px;
       font-size: 18px;
       font-weight: 600;

@@ -768,7 +768,6 @@ export const a5=[
             },
           },
           mounted: function () {
-            this.loadDetails();
             window.tim=window.tim||{};
             window.tim.item=this;
             let type=this.$store.state.repository.structureById[this.$route.params.id]?.type;
@@ -802,6 +801,7 @@ export const a5=[
               console.log(`Type:${type} is not covered (diagram)`);
               window.SetDiagram([]);
             }
+            this.loadDetails();
           },
           methods: {
             loadDetails: (function () {

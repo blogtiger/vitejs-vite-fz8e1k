@@ -17,6 +17,7 @@ window.convertToSvelvetNode = function(data) {
                 let keyName=relation.constraints[0].primary_column;
                 anchors.push({
                     type: "output", // Primary key is typically an output
+                    key: keyName,
                     id: `anchor_${data.name}-${keyName}`.toLocaleLowerCase(),
                     direction: "west" // Default direction, can be modified
                 });

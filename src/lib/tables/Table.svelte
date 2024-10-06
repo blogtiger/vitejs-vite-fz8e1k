@@ -6,7 +6,7 @@
     export let { title = "Default Title", id = null, data = [], anchors = [], position={ x: 700, y: 400 } } = configTb;
 
     // Function to determine Y offset for anchor placement
-    function getRowYPosition(key) {
+    function getKeyRowYPosition(key) {
       const rowIndex = data.findIndex(item => item.key === key);
       return rowIndex !== -1 ? 60 + rowIndex * 35 : 0;  // Assuming row height is ~35px
     }
@@ -21,7 +21,7 @@
             class="anchorWrapper"
             style="
               position: absolute; 
-              top: {getRowYPosition(anchor.key)}px;
+              top: {getKeyRowYPosition(anchor.key)}px;
               {anchor.direction === 'west' ? 'left: -16px;' : 'right: -16px;'}
             "
           >
@@ -33,7 +33,7 @@
             class="anchorWrapper"
             style="
               position: absolute; 
-              top: {getRowYPosition(anchor.key)}px;
+              top: {getKeyRowYPosition(anchor.key)}px;
               {anchor.direction === 'west' ? 'left: -16px;' : 'right: -16px;'}
             "
           >

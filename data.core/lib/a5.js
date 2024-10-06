@@ -769,6 +769,24 @@ export const a5=[
           },
           mounted: function () {
             this.loadDetails();
+            window.tim=window.tim||{};
+            window.tim.item=this;
+            console.log(this.$route.params.id);
+            console.log(this.$store.state.repository.structureById[
+              this.$route.params.id
+            ]);
+            
+            let objdt=this.$store.state.repository.objects[
+              this.$route.params.id
+            ];
+            window.dt=convertToSvelvetNode(objdt);
+            // console.log(dt);
+            // console.log(window.SetDiagram);
+            if(window.SetDiagram){
+            window.SetDiagram([...[dt]]);
+            // window.SetDiagram([dt]);
+            }
+
           },
           methods: {
             loadDetails: (function () {
@@ -2403,6 +2421,7 @@ export const a5=[
           },
           methods: {
             flattenAll: function () {
+              console.log(this.columns);
               if (!this.columns) return null;
               (this.flatColumns = this.flatten(this.columns, 0)),
                 this.$store.state.repository.filter && this.expandAll();

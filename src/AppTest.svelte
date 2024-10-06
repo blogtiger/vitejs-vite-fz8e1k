@@ -125,70 +125,19 @@
   }
 ];
 
-  // Function to calculate positions dynamically with anchor-aware positioning
-function calculatePositions(configArray, gridSize) {
-  let x = 0, y = 0;
-  configArray.forEach((item, index) => {
-    item.position = { x: x, y: y };
-
-    item.anchors.forEach(anchor => {
-      if (anchor.type === 'input') {
-        let otherNode = configArray.find(n =>
-          n.anchors.some(a => a.connections && a.connections.some(c => c[1] === anchor.id))
-        );
-
-        if (otherNode) {
-          // Compare x positions of the current node and the connected node
-          if (item.position.x > otherNode.position.x) {
-            anchor.direction = 'west';
-          } else {
-            anchor.direction = 'east';
-          }
-        } else {
-          // Default direction if no connection
-          anchor.direction = anchor.direction || 'west';
-        }
-      } else if (anchor.type === 'output') {
-        // Handle outputs similarly if needed
-        let otherNode = configArray.find(n =>
-          n.anchors.some(a => a.connections && a.connections.some(c => c[0] === anchor.id))
-        );
-
-        if (otherNode) {
-          if (item.position.x < otherNode.position.x) {
-            anchor.direction = 'east';
-          } else {
-            anchor.direction = 'west';
-          }
-        } else {
-          anchor.direction = anchor.direction || 'east';
-        }
-      }
-    });
-
-    x += gridSize;
-    if (x > gridSize * 3) {
-      x = 0;
-      y += gridSize;
-    }
-  });
-}
-
-
-  calculatePositions(config, gridSize); // Call the function to set positions
-
+let currentConfig=[...config];
   // Define a method to clear and set new config
-  window.SetDiagram = function(newconfig) {
-    config.length = 0;
-    config = [...newconfig]; // Replace the config with the new array
-    calculatePositions(config, gridSize); // Recalculate positions for new config
+    console.log(currentConfig.map(v=>v.id));
+
+  window.SetDiagram = function(a,b) {
+    currentConfig=config.slice(a,b);
   };
 
 </script>
 
 <body>
   <Svelvet fitView controls minimap>
-    {#each config as tableConfig (tableConfig.id)}
+    {#each currentConfig as tableConfig (tableConfig.id)}
       <PlanetsInFilms configTb={tableConfig} />
     {/each}
     <ThemeToggle main='light' alt='dark' slot='toggle' />

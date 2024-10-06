@@ -1,8 +1,8 @@
   <script>
     import { Node, Anchor } from 'svelvet';
       
-    export let config = {};
-    export let { title = "Default Title", id = null, data = [], anchors = [], position={ x: 700, y: 400 } } = config;
+    export let configTb = {};
+    export let { title = "Default Title", id = null, data = [], anchors = [], position={ x: 700, y: 400 } } = configTb;
 
     // Function to determine Y offset for anchor placement
     function getRowYPosition(key) {

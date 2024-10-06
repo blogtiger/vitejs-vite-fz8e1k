@@ -784,8 +784,7 @@ export const a5=[
                   let objdt=this.$store.state.repository.objects[
                     tb.id
                   ];
-                  let dt=convertToSvelvetNode(objdt);
-                  dts.push(dt);
+                  convertToSvelvetNode(dts, objdt);
                 });
                 window.SetDiagram([...dts]);
               }
@@ -795,17 +794,16 @@ export const a5=[
               let objdt=this.$store.state.repository.objects[
                 this.$route.params.id
               ];
-              let dt=convertToSvelvetNode(objdt);
               // console.log(dt);
               // console.log(window.SetDiagram);
               if(window.SetDiagram){
                   let dts=[];
-                  dts.push(dt);
+                  convertToSvelvetNode(dts, objdt);
 
                 objdt.relations.forEach(v=>{
                   console.log(`${v.foreign_table_object_id}=>${v.primary_table_object_id}, ${v.foreign_table_object_id==objdt.object_id?v.primary_table_object_id:v.foreign_table_object_id}`);
                   let objdtR_Id=v.foreign_table_object_id==objdt.object_id?v.primary_table_object_id:v.foreign_table_object_id;
-                  dts.push(convertToSvelvetNode(this.$store.state.repository.objects[objdtR_Id]));
+                  convertToSvelvetNode(dts, this.$store.state.repository.objects[objdtR_Id]);
                 });
                 window.SetDiagram([...dts]);
               }

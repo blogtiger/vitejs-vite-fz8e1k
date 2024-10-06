@@ -1,15 +1,32 @@
-window.convertToSvelvetNode = function(data) {
+window.convertToSvelvetNode = function(dts, data) {
     // Extract basic node information
     const title = data.name;
     const id = data.name.toLowerCase(); // Assuming the id is the lowercase version of the table name
+    
+    // Check if dts already contains an item with the same id
+    if(title)
+    {
+        try{
+    const existingNode = dts.find(node => node.title === title);
+    if (existingNode) {
+        return; // If a node with the same id exists, exit the function
+    }
+}catch(e){
+    console.log(e);
+    throw e;
+}
+    }
+    else{
+
+        console.log(data);
+    }
+
+
     const position = { x: 400, y: 200 }; // Default position, can be modified
-  
     // Prepare the anchors
     const anchors = [];
-
-
     const columnnames=[];
-  
+
     // Check if relations exist before iterating
     if (data.relations && Array.isArray(data.relations)) {
         data.relations.forEach((relation, index) => {
@@ -51,14 +68,14 @@ window.convertToSvelvetNode = function(data) {
     window.tim.anchors=window.tim.anchors||[];
     window.tim.anchors.push(...anchors);
   
-    // Construct the output object
-    return {
+    let d={
         title: title,
         id: id,
         position: position,
         anchors: anchors,
         data: nodeData
     };
+    dts.push(d);
 }
 
 

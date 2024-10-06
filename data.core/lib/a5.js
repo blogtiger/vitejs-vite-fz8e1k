@@ -773,16 +773,29 @@ export const a5=[
             let type=this.$store.state.repository.structureById[this.$route.params.id]?.type;
             if(type=="data_domain")
             {
-
-              console.log("data domain");
+              if(window.SetDiagram)
+              {
+                let objdt=this.$store.state.repository.objects[
+                  this.$route.params.id
+                ];
+                let tables=objdt.domain_links.filter(v=>v.type?.toLowerCase()=="table");
+                let dts=[];
+                tables.forEach(tb=>{
+                  let objdt=this.$store.state.repository.objects[
+                    tb.id
+                  ];
+                  let dt=convertToSvelvetNode(objdt);
+                  dts.push(dt);
+                });
+                window.SetDiagram([...dts]);
+              }
             }
             else if (type=="table")
             {
               let objdt=this.$store.state.repository.objects[
                 this.$route.params.id
               ];
-              window.objdt=objdt;
-              window.dt=convertToSvelvetNode(objdt);
+              let dt=convertToSvelvetNode(objdt);
               // console.log(dt);
               // console.log(window.SetDiagram);
               if(window.SetDiagram){

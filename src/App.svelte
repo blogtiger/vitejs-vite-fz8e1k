@@ -64,7 +64,6 @@ function calculatePositions(configArray, gridSize) {
     config.length = 0;
     config = [...newconfig]; // Replace the config with the new array
     calculatePositions(config, gridSize); // Recalculate positions for new config
-    window.diagramApp.fitView=true;
   };
 
 </script>

@@ -771,30 +771,37 @@ export const a5=[
             this.loadDetails();
             window.tim=window.tim||{};
             window.tim.item=this;
-            console.log(this.$route.params.id);
-            console.log(this.$store.state.repository.structureById[
-              this.$route.params.id
-            ]);
-            
-            let objdt=this.$store.state.repository.objects[
-              this.$route.params.id
-            ];
-            window.objdt=objdt;
-            window.dt=convertToSvelvetNode(objdt);
-            // console.log(dt);
-            // console.log(window.SetDiagram);
-            if(window.SetDiagram){
-              let dts=[];
-              dts.push(dt);
+            let type=this.$store.state.repository.structureById[this.$route.params.id]?.type;
+            if(type=="data_domain")
+            {
 
-            objdt.relations.forEach(v=>{
-              console.log(`${v.foreign_table_object_id}=>${v.primary_table_object_id}, ${v.foreign_table_object_id==objdt.object_id?v.primary_table_object_id:v.foreign_table_object_id}`);
-              let objdtR_Id=v.foreign_table_object_id==objdt.object_id?v.primary_table_object_id:v.foreign_table_object_id;
-              dts.push(convertToSvelvetNode(this.$store.state.repository.objects[objdtR_Id]));
-            });
-            window.SetDiagram([...dts]);
-            };
+              console.log("data domain");
+            }
+            else if (type=="table")
+            {
+              let objdt=this.$store.state.repository.objects[
+                this.$route.params.id
+              ];
+              window.objdt=objdt;
+              window.dt=convertToSvelvetNode(objdt);
+              // console.log(dt);
+              // console.log(window.SetDiagram);
+              if(window.SetDiagram){
+                  let dts=[];
+                  dts.push(dt);
 
+                objdt.relations.forEach(v=>{
+                  console.log(`${v.foreign_table_object_id}=>${v.primary_table_object_id}, ${v.foreign_table_object_id==objdt.object_id?v.primary_table_object_id:v.foreign_table_object_id}`);
+                  let objdtR_Id=v.foreign_table_object_id==objdt.object_id?v.primary_table_object_id:v.foreign_table_object_id;
+                  dts.push(convertToSvelvetNode(this.$store.state.repository.objects[objdtR_Id]));
+                });
+                window.SetDiagram([...dts]);
+              }
+            }
+            else{
+              console.log(`Type:${type} is not covered (diagram)`);
+              window.SetDiagram([]);
+            }
           },
           methods: {
             loadDetails: (function () {
@@ -5354,7 +5361,14 @@ export const a5=[
           computed: {
             items: function () {
               var e = [{ type: "repository", name: "Repository" }];
-              if (!this.id) return e;
+              if (!this.id)
+              { 
+                if(window.SetDiagram){
+                  let dts=[];
+                  window.SetDiagram(dts);
+                }
+                return e;
+              }
               var t = r.a.getParents(this.id).list.reverse(),
                 n = [this.$store.state.repository.structureById[this.id]];
               return e.concat(t).concat(n);
